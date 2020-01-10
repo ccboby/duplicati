@@ -1,0 +1,37 @@
+OEM文档参考
+https://github.com/duplicati/duplicati/wiki/Branding-and-OEM-customization
+
+Windows 二进制包 OEM 方法
+重新编译环境：Win10 , VS2017 
+环境问题总结：
+找不到7z：7z 安装后环境变量添加
+找不到vsvars32.bat：wix 2017 扩展安装 
+
+一、OEM安装程序名称
+涉及文件：Installer\Windows\Dulicati.wxs
+涉及字段：
+DisplayName  安装引导程序名称
+INSTALLLOCATION 安装文件夹位置
+
+二、二进制代码包
+可以在现成的二进制代码包基础上进行webroot修改
+二进制zip包下载地址 https://github.com/duplicati/duplicati/releases
+解压更改webroot内的内容再进行打包
+
+三、打包方法
+将二进制包（duplicati.zip）放置到 Installer\Windows 目录下
+使用 VS 2017 开发人员命令提示符工具
+进入git源码项目 Installer\Windows 文件夹
+执行打包命令：build-msi.bat duplicati.zip
+在该目录下会生成已打包好的msi应用程序
+
+四、实际应用方法
+将二进制zip包放置到Installer\Windows 目录下
+更改build-msi.bat文件，目的是将源码项目下的Duplicati\Server\webroot目录替换掉解压的目录内的webroot文件夹
+在行 7z x -oDuplicati %1 下添加一行
+xcopy ..\..\Duplicati\Server\webroot\* Duplicati\webroot\ /e /s /y /i
+后续直接在 项目Duplicati\Server\webroot 下进行定制修改
+
+
+Windows 源码包 OEM 方法
+待研究
