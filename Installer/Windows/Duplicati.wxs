@@ -20,7 +20,7 @@
     <?define ProgramFilesFolder = "ProgramFilesFolder" ?>
   <?endif?>
 
-  <?define DisplayName = "Yliyun Duplicati 2 " ?>
+  <?define DisplayName = "Duplicati 2" ?>
 
   <Product Id="$(var.ProductCode)" Name="$(var.DisplayName)" Language="1033" Version="$(var.ProductVersion)" Manufacturer="$(var.Manufacturer)" UpgradeCode="$(var.UpgradeCode)">
     <Package InstallerVersion="405" Compressed="yes" Id="$(var.PackageCode)" Platform="$(var.Platform)" InstallScope="perMachine" />
@@ -53,7 +53,7 @@
       <Directory Id="DesktopFolder" Name="Desktop"/>
     
       <Directory Id="$(var.ProgramFilesFolder)">
-        <Directory Id="INSTALLLOCATION" Name="Yliyun Duplicati 2" />
+        <Directory Id="INSTALLLOCATION" Name="Duplicati 2" />
       </Directory>
     </Directory>
 

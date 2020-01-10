@@ -12,7 +12,6 @@ IF NOT EXIST "%1" (
 call "%VS140COMNTOOLS%vsvars32.bat"
 
 7z x -oDuplicati %1
-xcopy ..\..\Duplicati\Server\webroot\* Duplicati\webroot\ /e /s /y /i
 
 IF EXIST "..\oem" (
 	echo Installing OEM files
