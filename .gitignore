@@ -25,3 +25,5 @@ binfiles.wxs
 .vs/
 
 Installer/debian/*.buildinfo
+Installer/Windows/*.zip
+Installer/Windows/*.msi
